@@ -55,7 +55,7 @@ struct AddCarView: View {
                     Button("Сохранить") {
                         // Добавить автомобиль
                         CoreDataManager.defaults.createCar(manufacturer: manufacturer, modelName: modelName, bodyType: bodyType, transmission: transmission, year: year, type: type)
-                        self.showSheetView = false
+                        showSheetView.toggle()
                     }
                 }
                 .navigationBarTitle("Добавить авто")
@@ -70,10 +70,4 @@ struct AddCarView: View {
         }
     }
 }
-
-//struct AddCar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddCarView()
-//    }
-//}
 

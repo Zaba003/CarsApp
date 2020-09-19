@@ -21,6 +21,7 @@ struct ContentView: View {
             VStack{
                 List {
                     ListCars(selectedModal: $selectedModal, showSheetView: $showSheetView)
+
                 }
                 
             }
@@ -33,18 +34,12 @@ struct ContentView: View {
                                         Text("Добавить")
                                     }
                 .sheet(isPresented: $showSheetView, content: {
-                            AddCarView(showSheetView: $showSheetView)
-                                .environment(\.managedObjectContext, self.managedObjectContext)
+                    AddCarView(showSheetView: $showSheetView)
+                        .environment(\.managedObjectContext, self.managedObjectContext)
                 })
             )
-            
             .navigationBarTitle("Автомобили")
         }
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}

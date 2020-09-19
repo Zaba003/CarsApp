@@ -47,27 +47,27 @@ struct CarRow: View {
             }
             
             VStack(alignment: .leading) {
-                ScrollView(.horizontal) {
-                    HStack {
-                        Image("camry6")
-                            .resizable().frame(width: 300, height: 169)
-                        Image("camry2")
-                            .resizable().frame(width: 300, height: 169)
-                        Image("camry3")
-                            .resizable().frame(width: 300, height: 169)
-                        Image("camry4")
-                            .resizable().frame(width: 300, height: 169)
-                        Image("camry5")
-                            .resizable().frame(width: 300, height: 169)
-                        Image("camry1")
-                            .resizable().frame(width: 300, height: 169)
-                        Image("camry7")
-                            .resizable().frame(width: 300, height: 169)
-                        Image("camry8")
-                            .resizable().frame(width: 300, height: 169)
-                        
-                    }
-                }
+//                ScrollView(.horizontal) {
+//                    HStack {
+//                        Image("camry6")
+//                            .resizable().frame(width: 300, height: 169)
+//                        Image("camry2")
+//                            .resizable().frame(width: 300, height: 169)
+//                        Image("camry3")
+//                            .resizable().frame(width: 300, height: 169)
+//                        Image("camry4")
+//                            .resizable().frame(width: 300, height: 169)
+//                        Image("camry5")
+//                            .resizable().frame(width: 300, height: 169)
+//                        Image("camry1")
+//                            .resizable().frame(width: 300, height: 169)
+//                        Image("camry7")
+//                            .resizable().frame(width: 300, height: 169)
+//                        Image("camry8")
+//                            .resizable().frame(width: 300, height: 169)
+//                        
+//                    }
+//                }
                 
                 HStack {
                     Text("\(car.bodyType ?? "Unknown bodyType"), \(car.transmission ?? "Unknown transmission")")
@@ -79,8 +79,3 @@ struct CarRow: View {
     }
 }
 
-//struct CarRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CarRow(car: Car)
-//    }
-//}

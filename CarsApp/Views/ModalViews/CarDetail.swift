@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CarDetail: View {
     @FetchRequest(fetchRequest: Car.SelectedCarFetchRequest()) var selectedCar: FetchedResults<Car>
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @Binding var showSheetView: Bool
     
@@ -39,23 +40,9 @@ struct CarDetail: View {
                             TextField("Производитель", text: $manufacturer)
                             TextField("Модель", text: $modelName)
                             TextField("Комплектация", text: $type)
-                            Picker("Тип кузова", selection: $bodyType) {
-                                ForEach(bodyTypes, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-                            
-                            Picker("Трансмиссия", selection: $transmission) {
-                                ForEach(transmissions, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-                            
-                            Picker("Дата выпуска", selection: $year) {
-                                ForEach(years, id: \.self) {
-                                    Text($0)
-                                }
-                            }
+                            TextField("Тип кузова", text: $bodyType)
+                            TextField("Трансмиссия", text: $transmission)
+                            TextField("Дата выпуска", text: $year)
                         }
                     }
                 }
@@ -67,7 +54,7 @@ struct CarDetail: View {
                     selectedCar[0].transmission = transmission
                     selectedCar[0].year = year
                     CoreDataManager.defaults.save()
-                    self.showSheetView = false
+                    showSheetView.toggle()
                     
                 }) {
                     Text("Сохранить")
@@ -84,7 +71,8 @@ struct CarDetail: View {
                 })
                 .onDisappear(perform: {self.selectedCar[0].isSelected = false})
                 
-            } .navigationBarTitle("\(manufacturer) \(modelName)")
+            }
+            .navigationBarTitle("\(manufacturer) \(modelName)")
             .navigationBarItems(leading:
                                     HStack {
                                         Button(action: {self.showSheetView = false}, label: {
@@ -93,11 +81,5 @@ struct CarDetail: View {
                                     }
             )
         }
-        }
     }
-
-//struct CarDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CarDetail()
-//    }
-//}
+}

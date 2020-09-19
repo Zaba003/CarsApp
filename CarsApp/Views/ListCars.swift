@@ -27,8 +27,3 @@ struct ListCars: View {
     }
 }
 
-//struct ListCars_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListCars()
-//    }
-//}
