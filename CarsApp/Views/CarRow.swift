@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct CarRow: View {
+    @ObservedObject var settings : CoreDataManager.UpdateState
 
     var car : Car
     @State var name: String = ""
@@ -28,14 +29,13 @@ struct CarRow: View {
                                     Button(action: {
                                             self.showSheetView = true
                                             self.car.isSelected = true
-
                                     }) {
                                         Image(systemName: "square.and.pencil")
                                             .resizable()
                                             .frame(width: 25, height: 25)
                                     }
                                     .sheet(isPresented: $showSheetView, content: {
-                                                CarDetail(showSheetView: $showSheetView)
+                                        CarDetail(settings: settings, showSheetView: $showSheetView)
                                     })
                                 }
                             }
@@ -65,7 +65,7 @@ struct CarRow: View {
 //                            .resizable().frame(width: 300, height: 169)
 //                        Image("camry8")
 //                            .resizable().frame(width: 300, height: 169)
-//                        
+//
 //                    }
 //                }
                 

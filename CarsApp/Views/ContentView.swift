@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var settings = CoreDataManager.UpdateState()
+    
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: Car.CarsFetchRequest()) var allCars: FetchedResults<Car>
     
@@ -20,12 +22,9 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 List {
-                    ListCars(selectedModal: $selectedModal, showSheetView: $showSheetView)
-
+                    ListCars(settings: settings, selectedModal: $selectedModal, showSheetView: $showSheetView)
                 }
-                
             }
-            
             .navigationBarItems(trailing:
                                     Button(action: {
                                         selectedModal = 1

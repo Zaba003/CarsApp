@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ListCars: View {
+    @ObservedObject var settings : CoreDataManager.UpdateState
     @FetchRequest(fetchRequest: Car.CarsFetchRequest()) var allCars: FetchedResults<Car>
     
     @Binding var selectedModal: Int
@@ -18,11 +19,10 @@ struct ListCars: View {
     var body: some View {
         ForEach(allCars, id: \.id){car in
             CarRow(
-                car: car,
+                settings: settings, car: car,
                 selectedModal: self.$selectedModal,
                 showSheetView: self.showSheetView
             )
-            
         }.onDelete(perform: CoreDataManager.defaults.removeCar )
     }
 }

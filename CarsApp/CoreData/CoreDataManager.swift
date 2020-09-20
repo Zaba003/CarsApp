@@ -113,4 +113,8 @@ class CoreDataManager {
             print("No car deleted")
         }
     }
+    
+    class UpdateState: ObservableObject {
+        @Published var isUpdate:Bool = false
+    }
 }

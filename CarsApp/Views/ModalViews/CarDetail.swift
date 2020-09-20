@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct CarDetail: View {
+    @ObservedObject var settings : CoreDataManager.UpdateState
+    
     @FetchRequest(fetchRequest: Car.SelectedCarFetchRequest()) var selectedCar: FetchedResults<Car>
-    @Environment(\.managedObjectContext) var managedObjectContext
     
     @Binding var showSheetView: Bool
     
@@ -55,6 +56,7 @@ struct CarDetail: View {
                     selectedCar[0].year = year
                     CoreDataManager.defaults.save()
                     showSheetView.toggle()
+                    self.settings.isUpdate.toggle()
                     
                 }) {
                     Text("Сохранить")
