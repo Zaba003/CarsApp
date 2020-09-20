@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct ListCars: View {
-    @ObservedObject var settings : CoreDataManager.UpdateState
     @FetchRequest(fetchRequest: Car.CarsFetchRequest()) var allCars: FetchedResults<Car>
+    
+    @ObservedObject var settings : CoreDataManager.UpdateState
     
     @Binding var selectedModal: Int
     @Binding var showSheetView: Bool

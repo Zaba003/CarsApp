@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var settings = CoreDataManager.UpdateState()
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: Car.CarsFetchRequest()) var allCars: FetchedResults<Car>
     
+    @ObservedObject var settings = CoreDataManager.UpdateState()
     
     @State var selectedModal = 0
     @State var showSheetView = false
