@@ -114,6 +114,8 @@ class CoreDataManager {
         }
     }
     
+    //=================================================
+    //MARK: UpdateState
     class UpdateState: ObservableObject {
         @Published var isUpdate:Bool = false
     }
