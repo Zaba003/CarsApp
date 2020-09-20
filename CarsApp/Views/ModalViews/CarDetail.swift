@@ -58,7 +58,7 @@ struct CarDetail: View {
                     selectedCar[0].type = type
                     CoreDataManager.defaults.save()
                     showSheetView.toggle()
-                    self.settings.isUpdate.toggle()
+                    settings.isUpdate.toggle()
                     
                 }) {
                     Text("Сохранить")
@@ -66,20 +66,20 @@ struct CarDetail: View {
                 }
                 
                 .onAppear(perform: {
-                    self.modelName = self.selectedCar[0].modelName ?? ""
-                    self.manufacturer = self.selectedCar[0].manufacturer ?? ""
-                    self.bodyType = self.selectedCar[0].bodyType ?? ""
-                    self.transmission = self.selectedCar[0].transmission ?? ""
-                    self.year = self.selectedCar[0].year ?? ""
-                    self.type = self.selectedCar[0].type ?? ""
+                    modelName = selectedCar[0].modelName ?? ""
+                    manufacturer = selectedCar[0].manufacturer ?? ""
+                    bodyType = selectedCar[0].bodyType ?? ""
+                    transmission = selectedCar[0].transmission ?? ""
+                    year = selectedCar[0].year ?? ""
+                    type = selectedCar[0].type ?? ""
                 })
-                .onDisappear(perform: {self.selectedCar[0].isSelected = false})
+                .onDisappear(perform: {selectedCar[0].isSelected = false})
                 
             }
             .navigationBarTitle("\(manufacturer) \(modelName)")
             .navigationBarItems(leading:
                                     HStack {
-                                        Button(action: {self.showSheetView = false}, label: {
+                                        Button(action: {showSheetView = false}, label: {
                                             Text("Назад")
                                         })
                                     }

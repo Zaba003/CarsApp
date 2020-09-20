@@ -21,8 +21,8 @@ struct ListCars: View {
         ForEach(allCars, id: \.id){car in
             CarRow(
                 settings: settings, car: car,
-                selectedModal: self.$selectedModal,
-                showSheetView: self.showSheetView
+                selectedModal: $selectedModal,
+                showSheetView: showSheetView
             )
         }.onDelete(perform: CoreDataManager.defaults.removeCar )
     }

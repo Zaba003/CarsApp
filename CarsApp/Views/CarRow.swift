@@ -27,8 +27,8 @@ struct CarRow: View {
                                 Spacer()
                                 HStack {
                                     Button(action: {
-                                            self.showSheetView = true
-                                            self.car.isSelected = true
+                                            showSheetView = true
+                                            car.isSelected = true
                                     }) {
                                         Image(systemName: "square.and.pencil")
                                             .resizable()

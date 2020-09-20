@@ -34,7 +34,7 @@ struct ContentView: View {
                                     }
                 .sheet(isPresented: $showSheetView, content: {
                     AddCarView(showSheetView: $showSheetView)
-                        .environment(\.managedObjectContext, self.managedObjectContext)
+                        .environment(\.managedObjectContext, managedObjectContext)
                 })
             )
             .navigationBarTitle("Автомобили")

@@ -11,7 +11,6 @@
 		D45617632513C847003BF42A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45617622513C847003BF42A /* CoreDataManager.swift */; };
 		D45617662513C9B7003BF42A /* CoreData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45617652513C9B7003BF42A /* CoreData+Extension.swift */; };
 		D45617692513D994003BF42A /* CarDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45617682513D994003BF42A /* CarDetail.swift */; };
-		D4B9CEED25127FEE00ECF0C7 /* demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9CEEC25127FEE00ECF0C7 /* demo.swift */; };
 		D4DB5EBB25122F6C00FF014C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB5EBA25122F6C00FF014C /* AppDelegate.swift */; };
 		D4DB5EBD25122F6C00FF014C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DB5EBC25122F6C00FF014C /* SceneDelegate.swift */; };
 		D4DB5EC025122F6C00FF014C /* CarsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4DB5EBE25122F6C00FF014C /* CarsApp.xcdatamodeld */; };
@@ -28,7 +27,6 @@
 		D45617622513C847003BF42A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D45617652513C9B7003BF42A /* CoreData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+Extension.swift"; sourceTree = "<group>"; };
 		D45617682513D994003BF42A /* CarDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetail.swift; sourceTree = "<group>"; };
-		D4B9CEEC25127FEE00ECF0C7 /* demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo.swift; sourceTree = "<group>"; };
 		D4DB5EB725122F6C00FF014C /* CarsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DB5EBA25122F6C00FF014C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4DB5EBC25122F6C00FF014C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D44275972517220800222BA2 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D4DB5EBA25122F6C00FF014C /* AppDelegate.swift */,
+				D4DB5EBC25122F6C00FF014C /* SceneDelegate.swift */,
+				D4DB5EC325122F6D00FF014C /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		D45617572513C68C003BF42A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,13 +112,10 @@
 			children = (
 				D45617572513C68C003BF42A /* CoreData */,
 				D45617582513C69A003BF42A /* Views */,
-				D4DB5EBA25122F6C00FF014C /* AppDelegate.swift */,
-				D4DB5EBC25122F6C00FF014C /* SceneDelegate.swift */,
-				D4DB5EC325122F6D00FF014C /* Assets.xcassets */,
+				D44275972517220800222BA2 /* SupportFiles */,
 				D4DB5EC825122F6D00FF014C /* LaunchScreen.storyboard */,
 				D4DB5ECB25122F6D00FF014C /* Info.plist */,
 				D4DB5EC525122F6D00FF014C /* Preview Content */,
-				D4B9CEEC25127FEE00ECF0C7 /* demo.swift */,
 			);
 			path = CarsApp;
 			sourceTree = "<group>";
@@ -196,7 +201,6 @@
 			files = (
 				D4DB5EC025122F6C00FF014C /* CarsApp.xcdatamodeld in Sources */,
 				D4DB5EBB25122F6C00FF014C /* AppDelegate.swift in Sources */,
-				D4B9CEED25127FEE00ECF0C7 /* demo.swift in Sources */,
 				D4255EEE2515F0F8001C2C57 /* ListCars.swift in Sources */,
 				D4DB5ED225122F8900FF014C /* AddCarView.swift in Sources */,
 				D4DC4B9525124106009DBD2B /* CarRow.swift in Sources */,

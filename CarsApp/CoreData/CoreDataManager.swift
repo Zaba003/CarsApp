@@ -50,7 +50,7 @@ class CoreDataManager {
     /// Create the app settings when the App first starts
     func createAppsetting(){
         createExampleData()
-        self.save()
+        save()
     }
     
     /// Creates a car
@@ -64,7 +64,7 @@ class CoreDataManager {
         car.year = year
         car.type = type
         car.isSelected = false
-        self.save()
+        save()
     }
     
     /// Create example car
@@ -72,10 +72,8 @@ class CoreDataManager {
         createCar(manufacturer: "Honda", modelName: "Accord", bodyType: "Седан", transmission: "Автомат", year: "2005", type: "Type S")
         createCar(manufacturer: "Toyota", modelName: "Camry", bodyType: "Седан", transmission: "Автомат", year: "2019", type: "2.5 AT Элеганс Safety")
         createCar(manufacturer: "Lexus", modelName: "RX300", bodyType: "Кроссовер", transmission: "Автомат", year: "2006", type: "3.3 AT 4WD")
-        self.save()
+        save()
     }
-    
-    
     
     //=================================================
     //MARK: Read

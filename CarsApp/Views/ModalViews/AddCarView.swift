@@ -61,7 +61,7 @@ struct AddCarView: View {
                 .navigationBarTitle("Добавить авто")
                 .navigationBarItems(leading:
                                         Button(action: {
-                                            self.showSheetView = false
+                                            showSheetView = false
                                         }) {
                                             Text("Назад")
                                         }
