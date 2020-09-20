@@ -55,6 +55,7 @@ struct CarDetail: View {
                     selectedCar[0].bodyType = bodyType
                     selectedCar[0].transmission = transmission
                     selectedCar[0].year = year
+                    selectedCar[0].type = type
                     CoreDataManager.defaults.save()
                     showSheetView.toggle()
                     self.settings.isUpdate.toggle()
